@@ -124,31 +124,31 @@ convert_to_dict_structure(mindmap_data)
 import pprint
 pprint.pprint(mindmap_data)
 
-target_value = 'E-mail:'
-result = search_nested_dict(mindmap_data, target_value) #fix to see level in b/w
+# target_value = 'E-mail:'
+# result = search_nested_dict(mindmap_data, target_value) #fix to see level in b/w
 
-if result:
-    print(f"Found value '{target_value}' in the nested dictionary. Parent key: {result}")
-else:
-    print(f"Value '{target_value}' not found in the nested dictionary.")
-
-
-target_value = 'emiial'
-result = search_nested_dict_similarity_original_case(mindmap_data, target_value)
-
-if result:
-    print(f"Found value '{target_value}' or similar in the nested dictionary. Closest match: {result}")
-else:
-    print(f"Value '{target_value}' or similar not found in the nested dictionary.")
+# if result:
+#     print(f"Found value '{target_value}' in the nested dictionary. Parent key: {result}")
+# else:
+#     print(f"Value '{target_value}' not found in the nested dictionary.")
 
 
+# target_value = 'emiial'
+# result = search_nested_dict_similarity_original_case(mindmap_data, target_value)
 
-target_value = 'fiRST NAme'
-top_matches = search_nested_dict_top5_similarity(mindmap_data, target_value)
+# if result:
+#     print(f"Found value '{target_value}' or similar in the nested dictionary. Closest match: {result}")
+# else:
+#     print(f"Value '{target_value}' or similar not found in the nested dictionary.")
 
-if top_matches:
-    print(f"Found value '{target_value}' or similar in the nested dictionary. Top 5 closest matches:")
-    for match in top_matches:
-        print(f" - {match[0]} (Distance: {match[1]})")
-else:
-    print(f"Value '{target_value}' or similar not found in the nested dictionary.")
+
+
+# target_value = 'fiRST NAme'
+# top_matches = search_nested_dict_top5_similarity(mindmap_data, target_value)
+
+# if top_matches:
+#     print(f"Found value '{target_value}' or similar in the nested dictionary. Top 5 closest matches:")
+#     for match in top_matches:
+#         print(f" - {match[0]} (Distance: {match[1]})")
+# else:
+#     print(f"Value '{target_value}' or similar not found in the nested dictionary.")

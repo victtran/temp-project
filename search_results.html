@@ -10,15 +10,23 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
-    <div class="container">
-        <h1>Search Results for "{{ query }}"</h1>
+    <h1>Search Results</h1>
+    <p>Search Query: {{ query }}</p>
 
-        <!-- Display search results -->
-        <ul>
-            {% for result in results %}
-                <li>{{ result }}</li>
-            {% endfor %}
-        </ul>
-    </div>
+    {% for result in results %}
+        <div>
+            <p><strong>Result {{ loop.index }}:</strong></p>
+            <p>Found value '{{ query }}' or similar in the nested dictionary.</p>
+            <p>Closest match: {{ result[0] }}</p>
+            <p>Path: {{ ' -> '.join(result[1]) }}</p>
+            <p>Complete Hierarchy:</p>
+            <ul style="list-style-type: none; padding-left: 0;">
+                {% for item in result[2] %}
+                    <li>{{ item }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endfor %}
 </body>
+
 </html>
